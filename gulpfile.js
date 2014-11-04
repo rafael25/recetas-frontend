@@ -14,9 +14,9 @@ var srcDir = './src',
     buildDir = './build';
 
 var css = gulp.src([
-    bowerDir+'/foundation/css/normalize.css',
-    bowerDir+'/foundation/css/foundation.css',
-    srcDir+'/css/*.css'
+        bowerDir+'/foundation/css/normalize.css',
+        bowerDir+'/foundation/css/foundation.css',
+        srcDir+'/css/*.css'
     ])
     .pipe(minifyCSS())
     .pipe(concat('main.min.css'))
@@ -30,14 +30,14 @@ var modernizr = gulp.src(bowerDir+'/modernizr/modernizr.js')
     .pipe(gulp.dest(buildDir+'/js/'));
 
 var scripts = gulp.src([
-    bowerDir+'/jquery/dist/jquery.min.js',
-    bowerDir+'/jquery-placeholder/jquery.placeholder.js',
-    bowerDir+'/jquery.cookie/jquery.cookie.js',
-    bowerDir+'/fastclick/lib/fastclick.js',
-    bowerDir+'/foundation/js/foundation.min.js',
-    bowerDir+'/handlebars/handlebars.runtime.min.js',
-    bowerDir+'/ember/ember.prod.js',
-    bowerDir+'/ember-data/ember-data.prod.js',])
+        bowerDir+'/jquery/dist/jquery.min.js',
+        bowerDir+'/jquery-placeholder/jquery.placeholder.js',
+        bowerDir+'/jquery.cookie/jquery.cookie.js',
+        bowerDir+'/fastclick/lib/fastclick.js',
+        bowerDir+'/foundation/js/foundation.min.js',
+        bowerDir+'/handlebars/handlebars.runtime.min.js',
+        bowerDir+'/ember/ember.prod.js',
+        bowerDir+'/ember-data/ember-data.prod.js',])
     .pipe(uglify({mangle: false}))
     .pipe(concat('main.min.js'))
     .pipe(gulp.dest(buildDir+'/js/'));
@@ -54,7 +54,23 @@ var templates = gulp.src(srcDir+'/templates/*.hbs')
     .pipe(concat('templates.min.js'))
     .pipe(gulp.dest(buildDir+'/js/'));
 
-var index = gulp.task('index', function() {
+/* Tareas */
+
+gulp.task('watch-css', function() {
+    return gulp.src([
+        bowerDir+'/foundation/css/normalize.css',
+        bowerDir+'/foundation/css/foundation.css',
+        srcDir+'/css/*.css'
+    ])
+        .pipe(concat('main.min.css'))
+        .pipe(gulp.dest(buildDir+'/css/'));
+});
+
+gulp.task('watch', ['index'], function() {
+    gulp.watch(srcDir+'/css/*.css', ['watch-css'])
+});
+
+gulp.task('index', function() {
     return gulp.src(srcDir+'/index.html')
         .pipe(inject(modernizr, {relative: true, name: 'head'}))
         .pipe(inject(es.merge(css, scripts, templates), {relative: true}))
