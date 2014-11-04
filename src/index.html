@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Sitio Recetas</title>
+	<!-- head:js -->
+	<!-- endinject -->
+	<!-- inject:css -->
+	<!-- endinject -->
+</head>
+<body>
+	<nav class="top-bar" data-topbar role="navigation">
+		<ul class="title-area">
+			<li class="name"><h1><a href="#">El Sazón</a></h1></li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Menú</span></a></li>
+		</ul>
+
+		<section class="top-bar-section">
+			<ul class="left">
+				<li><a href="#">Pastas</a></li>
+				<li class="active"><a href="#">Ensaladas</a></li>
+				<li><a href="#">Postres</a></li>
+			</ul>
+
+			<ul class="right">
+				<li class="has-form">
+					<a class="button" data-reveal-id="add-btn-modal" href="#">Agregar</a>
+				</li>
+			</ul>
+		</section>
+	</nav>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<h2>Ensaladas</h2>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row ">
+			<div class="large-3 medium-6 columns">
+				<div class="receta panel">
+					<img src="img/191_ensalada.jpg">
+					<h4><a data-reveal-id="receta1" href="#">Receta</a></h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus rem ad qui id corrupti esse error voluptates, beatae aperiam illum.</p>
+				</div>
+			</div>
+			<div class="large-3 medium-6 columns">
+				<div class="receta panel">
+					<img src="img/192_ensalada.jpg">
+					<h4><a data-reveal-id="receta1" href="#">Receta</a></h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus rem ad qui id corrupti esse error voluptates, beatae aperiam illum.</p>
+				</div>
+			</div>
+			<div class="large-3 medium-6 columns">
+				<div class="receta panel">
+					<img src="img/193_ensalada.jpg">
+					<h4><a data-reveal-id="receta1" href="#">Receta</a></h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus rem ad qui id corrupti esse error voluptates, beatae aperiam illum.</p>
+				</div>
+			</div>
+			<div class="large-3 medium-6 columns">
+				<div class="receta panel">
+					<img src="img/194_ensalada.jpg">
+					<h4><a data-reveal-id="receta1" href="#">Receta</a></h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus rem ad qui id corrupti esse error voluptates, beatae aperiam illum.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Reveal Modals -->
+
+	<div id="receta1" class="reveal-modal" data-reveal>
+		<h2>Titulo receta</h2>
+		<img class="th text-center" src="img/192_ensalada.jpg">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium ad alias aliquid aperiam asperiores, at cum cumque debitis delectus dignissimos doloribus eaque eveniet fugit impedit incidunt ipsam laboriosam laudantium, magni modi nihil nulla porro provident quam quasi, rem sapiente suscipit tenetur vero voluptates. Cupiditate minima molestiae quo tempore voluptatibus. Deserunt enim itaque maxime minus nesciunt repudiandae vel. Ab quaerat repellat voluptatum? Consequatur, cumque enim error quisquam quod suscipit totam!</p>
+		<ul>
+			<li>Ad assumenda, culpa maiores molestiae nemo quae reprehenderit.</li>
+			<li>Alias blanditiis cumque deserunt eligendi eos hic molestias,</li>
+			<li>totam unde vero vitae? Aliquid animi culpa distinctio doloremque</li>
+		</ul>
+		<p>dolorum ducimus error esse expedita fugit, nisi nobis non nostrum obcaecati, officiis optio, perspiciatis possimus praesentium quaerat ratione repellat sapiente suscipit veritatis vitae voluptates voluptatum? Animi commodi consectetur et eum, in ipsum iusto, laboriosam maxime, nesciunt pariatur placeat possimus ratione reiciendis tempora totam vitae voluptas? Alias aliquam at ducimus earum error, laboriosam maxime odit quam quidem saepe? Enim in odit similique? Beatae consectetur consequuntur, debitis deleniti dolorum in modi nam necessitatibus nihil nostrum possimus quo ratione sunt voluptas, voluptatibus. Aperiam atque aut beatae dignissimos dolorem ea, eaque, est ex id illum in ipsa iste iusto magnam minus nisi nulla omnis, optio quasi repellendus reprehenderit temporibus.</p>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+
+	<div id="add-btn-modal" class="reveal-modal" data-reveal>
+		<h2>Agregar nueva receta</h2>
+		<form>
+			<div class="row collapse">
+				<div class="large-2 small-3 columns">
+					<span class="prefix">Nombre</span>
+				</div>
+				<div class="large-10 small-9 columns">
+					<input type="text" />
+				</div>
+			</div>
+			<div class="row collapse">
+				<div class="large-2 small-12 columns">
+					<span class="prefix">Instrucciones</span>
+				</div>
+				<div class="large-10 small-12 columns">
+					<textarea rows="20"></textarea>
+				</div>
+			</div>
+		</form>
+		<a class="close-reveal-modal">&#215;</a>
+	</div>
+
+	<!-- inject:js -->
+	<!-- endinject -->
+	<script type="text/javascript">
+		$(document).foundation();
+	</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+src/bower_components
+build/
+test/
+node_modules/
+.idea/

@@ -1,0 +1,42 @@
+body {
+    background: url("../img/tree_bark.png");
+}
+
+h2 {
+    color: #A5B086;
+}
+
+.panel {
+    background: url("../img/handmadepaper.png");
+}
+
+.receta h4 {
+    padding: 9px 20px;
+    position: relative;
+    left: -29px;
+    background: url("../img/bg-heading-2.png") no-repeat;
+}
+
+.receta h4 a {
+    color: #fff;
+}
+
+.top-bar {
+    background: url("../img/green_cup.png");
+}
+
+.top-bar-section ul li {
+    background: url("../img/green_cup.png");
+}
+
+.top-bar.expanded .title-area {
+    background: url("../img/green_cup.png");
+}
+
+.top-bar-section .has-form {
+    background: url("../img/green_cup.png"); !important;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background: url("../img/green_cup.png");
+}
