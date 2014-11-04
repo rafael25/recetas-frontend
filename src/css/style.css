@@ -40,3 +40,7 @@ h2 {
 .top-bar-section li:not(.has-form) a:not(.button) {
     background: url("../img/green_cup.png");
 }
+
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    background: #939E81;
+}
