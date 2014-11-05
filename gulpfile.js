@@ -7,8 +7,10 @@ var gulp = require('gulp'),
     inject = require('gulp-inject'),
     es = require('event-stream'),
     minifyCSS = require('gulp-minify-css'),
+    browserSync = require('browser-sync'),
 	concat = require('gulp-concat');
 
+var reload = browserSync.reload;
 var srcDir = './src',
     bowerDir = srcDir+'/bower_components',
     buildDir = './build';
@@ -63,16 +65,25 @@ gulp.task('watch-css', function() {
         srcDir+'/css/*.css'
     ])
         .pipe(concat('main.min.css'))
-        .pipe(gulp.dest(buildDir+'/css/'));
+        .pipe(gulp.dest(buildDir+'/css/'))
+        .pipe(reload({stream:true}));
 });
 
-gulp.task('watch', ['index'], function() {
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: buildDir
+        }
+    });
+});
+
+gulp.task('watch', ['index', 'browser-sync'], function() {
     gulp.watch(srcDir+'/css/*.css', ['watch-css'])
 });
 
 gulp.task('index', function() {
     return gulp.src(srcDir+'/index.html')
-        .pipe(inject(modernizr, {relative: true, name: 'head'}))
-        .pipe(inject(es.merge(css, scripts, templates), {relative: true}))
+        .pipe(inject(modernizr, {relative: false, ignorePath: 'build', addRootSlash: false, name: 'head'}))
+        .pipe(inject(es.merge(css, scripts, templates), {relative: false, ignorePath: 'build', addRootSlash: false}))
         .pipe(gulp.dest(buildDir+'/'));
 });
