@@ -39,7 +39,12 @@ var scripts = gulp.src([
         bowerDir+'/foundation/js/foundation.min.js',
         bowerDir+'/handlebars/handlebars.runtime.min.js',
         bowerDir+'/ember/ember.prod.js',
-        bowerDir+'/ember-data/ember-data.prod.js',])
+        bowerDir+'/ember-data/ember-data.prod.js',
+        srcDir+'/js/app.js',
+        srcDir+'/js/router.js',
+        srcDir+'/js/store.js',
+        srcDir+'/js/**/*.js'
+    ])
     .pipe(uglify({mangle: false}))
     .pipe(concat('main.min.js'))
     .pipe(gulp.dest(buildDir+'/js/'));
@@ -69,6 +74,26 @@ gulp.task('watch-css', function() {
         .pipe(reload({stream:true}));
 });
 
+gulp.task('watch-js', function() {
+    return gulp.src([
+        bowerDir+'/jquery/dist/jquery.min.js',
+        bowerDir+'/jquery-placeholder/jquery.placeholder.js',
+        bowerDir+'/jquery.cookie/jquery.cookie.js',
+        bowerDir+'/fastclick/lib/fastclick.js',
+        bowerDir+'/foundation/js/foundation.min.js',
+        bowerDir+'/handlebars/handlebars.runtime.min.js',
+        bowerDir+'/ember/ember.prod.js',
+        bowerDir+'/ember-data/ember-data.prod.js',
+        srcDir+'/js/app.js',
+        srcDir+'/js/router.js',
+        srcDir+'/js/store.js',
+        srcDir+'/js/**/*.js'
+    ])
+        .pipe(concat('main.min.js'))
+        .pipe(gulp.dest(buildDir+'/js/'))
+        .pipe(reload({stream:true}));
+});
+
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
@@ -79,11 +104,13 @@ gulp.task('browser-sync', function() {
 
 gulp.task('watch', ['index', 'browser-sync'], function() {
     gulp.watch(srcDir+'/css/*.css', ['watch-css']);
+    gulp.watch([srcDir+'/js/*.js', srcDir+'/js/**/.js'], ['watch-js']);
 });
 
 gulp.task('index', function() {
     return gulp.src(srcDir+'/index.html')
         .pipe(inject(modernizr, {relative: false, ignorePath: 'build', addRootSlash: false, name: 'head'}))
-        .pipe(inject(es.merge(css, scripts, templates), {relative: false, ignorePath: 'build', addRootSlash: false}))
+        .pipe(inject(es.merge(css, scripts), {relative: false, ignorePath: 'build', addRootSlash: false}))
+        .pipe(inject(templates, {relative: false, ignorePath: 'build', addRootSlash: false, name: 'templates'}))
         .pipe(gulp.dest(buildDir+'/'));
 });
