@@ -63,6 +63,21 @@ var templates = gulp.src(srcDir+'/templates/*.hbs')
 
 /* Tareas */
 
+gulp.task('watch-templates', function() {
+    return gulp.src(srcDir+'/templates/*.hbs')
+        .pipe(handlebars({
+            handlebars: require('ember-handlebars')
+        }))
+        .pipe(wrap('Ember.Handlebars.template(<%= contents %>)'))
+        .pipe(declare({
+            namespace: 'Ember.TEMPLATES',
+            noRedeclare: true
+        }))
+        .pipe(concat('templates.min.js'))
+        .pipe(gulp.dest(buildDir+'/js/'))
+        .pipe(reload({stream:true}));
+});
+
 gulp.task('watch-css', function() {
     return gulp.src([
         bowerDir+'/foundation/css/normalize.css',
@@ -105,6 +120,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', ['index', 'browser-sync'], function() {
     gulp.watch(srcDir+'/css/*.css', ['watch-css']);
     gulp.watch([srcDir+'/js/*.js', srcDir+'/js/**/.js'], ['watch-js']);
+    gulp.watch(srcDir+'/templates/*.hbs', ['watch-templates']);
 });
 
 gulp.task('index', function() {
