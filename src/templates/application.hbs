@@ -1,36 +1,22 @@
-<div class="row">
-    <div class="large-12 columns">
-        <nav class="navbar" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                {{#link-to 'recetas'}}Recetas{{/link-to}}
-            </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-            </div>
-        </nav>
-    </div>
-    <div class="container large-12 columns" id="main">
-        <div class="row">
-            <div>
-                <div class="large-3 columns">
-                    <div class="well sidebar-nav">
-                        <strong>Colors</strong>
-                        <ul class="list-group">
-                        {{#each item in controller}}
-                            <li class="list-group-item">{{item}}</li>
-                        {{/each}}
-                        </ul>
-                    </div>
-                </div>
-                <div class="large-9 columns">
-                    {{outlet}}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<nav class="top-bar" data-topbar role="navigation">
+	<ul class="title-area">
+		<li class="name"><h1>{{#link-to 'index'}}El Sazón{{/link-to}}</h1></li>
+		<li class="toggle-topbar menu-icon"><a href="#"><span>Menú</span></a></li>
+	</ul>
+
+	<section class="top-bar-section">
+		<ul class="left">
+			<li><a href="#">Pastas</a></li>
+			<li>{{#link-to 'recetas'}}Ensaladas{{/link-to}}</li>
+			<li><a href="#">Postres</a></li>
+		</ul>
+
+		<ul class="right">
+			<li class="has-form">
+				{{#link-to 'recetas.new' class="button"}}Agregar{{/link-to}}
+			</li>
+		</ul>
+	</section>
+</nav>
+
+<div class="container">{{outlet}}</div>
