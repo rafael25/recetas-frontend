@@ -22,6 +22,10 @@ h2 {
     color: #fff;
 }
 
+.receta img {
+    max-height: 240px;
+}
+
 .top-bar {
     background: url("../img/green_cup.png");
 }
