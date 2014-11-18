@@ -56,7 +56,11 @@ var templates = gulp.src(srcDir+'/templates/*.hbs')
     .pipe(wrap('Ember.Handlebars.template(<%= contents %>)'))
     .pipe(declare({
         namespace: 'Ember.TEMPLATES',
-        noRedeclare: true
+        noRedeclare: true,
+        processName: function(filePath) {
+            // Convert dots to slashes and drop the first two folders
+            return declare.processNameByPath(filePath).split('.').slice(2).join('/');
+        }
     }))
     .pipe(concat('templates.min.js'))
     .pipe(gulp.dest(buildDir+'/js/'));
@@ -71,7 +75,11 @@ gulp.task('watch-templates', function() {
         .pipe(wrap('Ember.Handlebars.template(<%= contents %>)'))
         .pipe(declare({
             namespace: 'Ember.TEMPLATES',
-            noRedeclare: true
+            noRedeclare: true,
+            processName: function(filePath) {
+            // Convert dots to slashes and drop the first two folders
+            return declare.processNameByPath(filePath).split('.').slice(2).join('/');
+        }
         }))
         .pipe(concat('templates.min.js'))
         .pipe(gulp.dest(buildDir+'/js/'))
