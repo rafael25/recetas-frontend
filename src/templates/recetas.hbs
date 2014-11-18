@@ -6,36 +6,15 @@
 
 <div class="container">
 	<div class="row ">
-		<div class="large-6 medium-6 columns">
-			<div class="receta panel">
-				<img src="img/191_ensalada.jpg" />
-				<h4><a data-reveal-id="receta1" href="#">Receta</a></h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus rem ad qui id corrupti esse error voluptates, beatae aperiam illum.</p>
+		{{#each}}
+			<div class="large-6 medium-6 columns">
+				<div class="receta panel">
+					<p><img {{bind-attr src="imagen"}} /></p>
+					<h4>{{#link-to 'receta' this}} {{nombre}} {{/link-to}}</h4>
+					<p>{{detalles}}</p>
+				</div>
 			</div>
-		</div>
-		<div class="large-6 medium-6 columns">
-			<div class="receta panel">
-				<img src="img/192_ensalada.jpg" />
-				<h4><a data-reveal-id="receta1" href="#">Receta</a></h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus rem ad qui id corrupti esse error voluptates, beatae aperiam illum.</p>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="large-6 medium-6 columns">
-			<div class="receta panel">
-				<img src="img/193_ensalada.jpg" />
-				<h4><a data-reveal-id="receta1" href="#">Receta</a></h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus rem ad qui id corrupti esse error voluptates, beatae aperiam illum.</p>
-			</div>
-		</div>
-		<div class="large-6 medium-6 columns">
-			<div class="receta panel">
-				<img src="img/194_ensalada.jpg" />
-				<h4><a data-reveal-id="receta1" href="#">Receta</a></h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus rem ad qui id corrupti esse error voluptates, beatae aperiam illum.</p>
-			</div>
-		</div>
+		{{/each}}
 	</div>
 </div>
 
