@@ -6,16 +6,16 @@
 
 <div class="container">
 	<div class="row ">
-		{{#each}}
+		{{#each receta in model}}
 			<div class="large-6 medium-6 columns">
 				<div class="receta panel">
 					<div class="row">
 						<div class="large-12 columns large-centered">
-							<p><img {{bind-attr src="imagen"}} /></p>
+							<p>{{#link-to 'receta' receta}}<img {{bind-attr src="receta.imagen"}} />{{/link-to}}</p>
 						</div>
 					</div>
-					<h4>{{#link-to 'receta' this}} {{nombre}} {{/link-to}}</h4>
-					<p>{{detalles}}</p>
+					<h4>{{#link-to 'receta' this}} {{receta.nombre}} {{/link-to}}</h4>
+					<p>{{receta.detalles}}</p>
 				</div>
 			</div>
 		{{/each}}

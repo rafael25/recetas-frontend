@@ -9,13 +9,13 @@ App.Receta.FIXTURES = [
 		id: 1,
 		nombre: 'Receta uno',
 		detalles: 'Los detalles de la receta uno',
-		imagen: 'img/191_ensalada.jpg'
+		imagen: 'img/192_ensalada.jpg'
 	},
 	{
 		id: 2,
 		nombre: 'Receta dos',
 		detalles: 'Los detalles de la receta dos',
-		imagen: 'img/192_ensalada.jpg'
+		imagen: 'img/191_ensalada.jpg'
 	},
 	{
 		id: 3,
