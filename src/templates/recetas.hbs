@@ -9,7 +9,11 @@
 		{{#each}}
 			<div class="large-6 medium-6 columns">
 				<div class="receta panel">
-					<p><img {{bind-attr src="imagen"}} /></p>
+					<div class="row">
+						<div class="large-12 columns large-centered">
+							<p><img {{bind-attr src="imagen"}} /></p>
+						</div>
+					</div>
 					<h4>{{#link-to 'receta' this}} {{nombre}} {{/link-to}}</h4>
 					<p>{{detalles}}</p>
 				</div>
