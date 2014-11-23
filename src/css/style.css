@@ -27,6 +27,24 @@ h2 {
     margin-bottom: 1.2rem;
 }
 
+.receta-edit input,
+.receta-edit textarea {
+	color: #A5B086;
+	text-align: center;
+	border: none;
+	border-bottom: 1px solid rgba(165, 176, 134, 0.4);
+	box-shadow: none;
+	font-size: 1rem;
+}
+
+.receta-edit textarea {
+	text-align: left;
+}
+
+.receta-edit .nombre {
+	font-size: 1.4rem;
+}
+
 .top-bar {
     background: url("../img/green_cup.png");
 }
