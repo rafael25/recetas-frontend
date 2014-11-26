@@ -6,19 +6,34 @@
 
 <div class="container">
 	<div class="row ">
-		{{#each receta in model}}
-			<div class="large-6 medium-6 columns">
-				<div class="receta panel">
-					<div class="row">
-						<div class="large-12 columns large-centered">
-							<p>{{#link-to 'receta' receta}}<img {{bind-attr src="receta.imagen"}} />{{/link-to}}</p>
+		<div class="large-6 medium-6 columns">
+			{{#eachIndexed receta in model}}
+				{{#if even}}
+					<div class="receta panel">
+						<div class="row">
+							<div class="large-12 columns large-centered">
+								<p>{{#link-to 'receta' receta}}<img {{bind-attr src="receta.imagen"}} />{{/link-to}}</p>
+							</div>
 						</div>
+						<h4>{{#link-to 'receta' receta}} {{receta.nombre}} {{/link-to}}</h4>
 					</div>
-					<h4>{{#link-to 'receta' receta}} {{receta.nombre}} {{/link-to}}</h4>
-					<p>{{receta.detalles}}</p>
-				</div>
-			</div>
-		{{/each}}
+				{{/if}}
+			{{/eachIndexed}}
+		</div>
+		<div class="large-6 medium-6 columns">
+			{{#eachIndexed receta in model}}
+				{{#if odd}}
+					<div class="receta panel">
+						<div class="row">
+							<div class="large-12 columns large-centered">
+								<p>{{#link-to 'receta' receta}}<img {{bind-attr src="receta.imagen"}} />{{/link-to}}</p>
+							</div>
+						</div>
+						<h4>{{#link-to 'receta' receta}} {{receta.nombre}} {{/link-to}}</h4>
+					</div>
+				{{/if}}
+			{{/eachIndexed}}
+		</div>
 	</div>
 </div>
 
