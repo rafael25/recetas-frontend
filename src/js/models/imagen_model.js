@@ -1,0 +1,1 @@
+App.Imagen = DS.Model.extend();
