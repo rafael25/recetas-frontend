@@ -1,38 +1,58 @@
 App.Receta = DS.Model.extend({
 	nombre: DS.attr('string'),
-	detalles: DS.attr('string'),
-	imagen: DS.attr('string')
+	descripcion: DS.attr('string'),
+	ingredientes: DS.attr('string'),
+	preparacion: DS.attr('string'),
+	tiempoPrep: DS.attr('number'),
+	rendimiento: DS.attr('string')
 });
+
+Ember.Inflector.inflector.irregular('receta', 'recetas');
 
 App.Receta.FIXTURES = [
 	{
 		id: 1,
-		nombre: 'Receta uno',
-		detalles: 'Los detalles de la receta uno',
-		imagen: 'img/192_ensalada.jpg'
+		nombre: 'Receta Uno',
+		descripcion: 'Descripcion de la receta uno',
+		ingredientes: 'Los ingredientes\nUn ingrediente\nDos ingedientes',
+		preparacion: 'Estas son las instrucciones de preparacion',
+		tiempoPrep: 25,
+		rendimiento: '2 porciones'
 	},
 	{
 		id: 2,
-		nombre: 'Receta dos',
-		detalles: 'Los detalles de la receta dos',
-		imagen: 'img/191_ensalada.jpg'
+		nombre: 'Receta Dos',
+		descripcion: 'Descripcion de la receta Dos',
+		ingredientes: 'Los ingredientes\nUn ingrediente\nDos ingedientes',
+		preparacion: 'Estas son las instrucciones de preparacion',
+		tiempoPrep: 25,
+		rendimiento: '2 porciones'
 	},
 	{
 		id: 3,
-		nombre: 'Receta tres',
-		detalles: 'Los detalles de la receta tres',
-		imagen: 'img/193_ensalada.jpg'
+		nombre: 'Receta Tres',
+		descripcion: 'Descripcion de la receta Tres',
+		ingredientes: 'Los ingredientes\nUn ingrediente\nDos ingedientes',
+		preparacion: 'Estas son las instrucciones de preparacion',
+		tiempoPrep: 25,
+		rendimiento: '2 porciones'
 	},
 	{
 		id: 4,
-		nombre: 'Receta cuatro',
-		detalles: 'Los detalles de la receta cuatro',
-		imagen: 'img/194_ensalada.jpg'
+		nombre: 'Receta Cuatro',
+		descripcion: 'Descripcion de la receta Cuatro',
+		ingredientes: 'Los ingredientes\nUn ingrediente\nDos ingedientes',
+		preparacion: 'Estas son las instrucciones de preparacion',
+		tiempoPrep: 25,
+		rendimiento: '2 porciones'
 	},
 	{
 		id: 5,
-		nombre: 'Receta cinco',
-		detalles: 'Los detalles de la receta cinco',
-		imagen: 'img/191_ensalada.jpg'
+		nombre: 'Receta Cinco',
+		descripcion: 'Descripcion de la receta Cinco',
+		ingredientes: 'Los ingredientes\nUn ingrediente\nDos ingedientes',
+		preparacion: 'Estas son las instrucciones de preparacion',
+		tiempoPrep: 25,
+		rendimiento: '2 porciones'
 	}
 ];
