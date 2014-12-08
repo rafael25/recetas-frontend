@@ -1,7 +1,14 @@
 <h2 class="text-center">{{nombre}} <span class="small">{{#link-to 'receta.edit'}}Editar{{/link-to}}</span> </h2>
-<p class="text-center"><img  /></p>
-<p>{{descripcion}}</p>
+	{{#each imagen in imagenes}}
+		<p class="text-center"><img class="th text-ceter" {{bind-attr src="imagen.url"}} /></p>
+	{{/each}}
 <p>Tiempo de preparacion: {{tiempoPrep}}</p>
 <p>Rendimiento: {{rendimiento}}</p>
 <p>Ingredentes: {{ingredientes}}</p>
 <p>Preaparacion: {{preparacion}}</p>
+<p>Categorias:</p>
+<ul>
+	{{#each categoria in categorias}}
+		<li>{{categoria.nombre}}</li>
+	{{/each}}
+</ul>
