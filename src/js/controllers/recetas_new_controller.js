@@ -4,11 +4,13 @@ App.NewController = Ember.ObjectController.extend({
 			this.transitionTo('index');
 		},
 		guardar: function() {
+			var self = this;
 			var newNombre = $('#nombre').val(),
 				newIngredientes = $('#ingredientes').val(),
 				newInstrucciones = $('#instrucciones').val(),
 				newTiempo = $('#tiempo').val(),
 				newRendimiento = $('#rendimiento').val();
+				newImagenUrl = $('#imagen').val();
 			var receta = this.store.createRecord('receta', {
 				nombre: newNombre,
 				ingredientes: newIngredientes,
@@ -17,12 +19,14 @@ App.NewController = Ember.ObjectController.extend({
 				rendimiento: newRendimiento
 			});
 			var imagen = this.store.createRecord('imagen', {
-				url: 'img/100.jpg'
+				url: newImagenUrl
 			});
 			receta.get('imagenes').pushObject(imagen);
 			receta.save().then(function() {
-				imagen.set('receta', receta.get('id'));
-				imagen.save();
+				imagen.set('receta', receta);
+				imagen.save().then(function () {
+					self.transitionToRoute('recetas');
+				});
 			});
 		}
 	}
