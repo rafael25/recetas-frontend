@@ -1,4 +1,4 @@
-App.RecetasNewView = Ember.View.extend({
+App.NewView = Ember.View.extend({
 	didInsertElement: function() {
 		var modal = this.$('#add-btn-modal');
 		var view = this;

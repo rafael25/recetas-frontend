@@ -1,0 +1,54 @@
+<div id="add-btn-modal" class="reveal-modal" data-reveal>
+	<h2>Agregar nueva receta</h2>
+	<form>
+		<div class="row collapse">
+			<div class="large-2 small-3 columns">
+				<span class="prefix">Nombre</span>
+			</div>
+			<div class="large-10 small-9 columns">
+				{{input type="text" id="nombre" placeholder="Nombre"}}
+			</div>
+		</div>
+		<div class="row collapse">
+			<div class="large-2 small-12 columns">
+				<span class="prefix">Ingredientes</span>
+			</div>
+			<div class="large-10 small-12 columns">
+				{{textarea rows=5 id="ingredientes" placeholder="Escribe aqui los ingredientes"}}
+			</div>
+		</div>
+		<div class="row collapse">
+			<div class="large-2 small-12 columns">
+				<span class="prefix">Instrucciones</span>
+			</div>
+			<div class="large-10 small-12 columns">
+				{{textarea rows=7 id="instrucciones" placeholder="Escribe aqui las instrucciones de preparacion"}}
+			</div>
+		</div>
+		<div class="row collapse">
+			<div class="large-2 medium-3 small-12 columns">
+				<span class="prefix">Tiempo</span>
+			</div>
+			<div class="large-8 medium-7 small-9 columns">
+				{{input type="text" id="tiempo" placeholder="Tiempo de preparacion en minutos"}}
+			</div>
+			<div class="large-2 medium-2 small-3 columns">
+				<span class="postfix">minutos</span>
+			</div>
+		</div>
+		<div class="row collapse">
+			<div class="large-2 medium-3 small-12 columns">
+				<span class="prefix">Rendimiento</span>
+			</div>
+			<div class="large-10 medium-9 small-12 columns">
+				{{input type="text" id="rendimiento" placeholder="Rendimiento de la receta"}}
+			</div>
+		</div>
+		<div class="row collapse">
+			<div class="large-4 medium-6 small-12 columns end">
+				<a {{action 'guardar'}} class="button expand small">Guardar</a>
+			</div>
+		</div>
+	</form>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
