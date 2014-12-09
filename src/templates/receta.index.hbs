@@ -2,11 +2,13 @@
 	{{#each imagen in imagenes}}
 		<p class="text-center"><img class="th text-ceter" {{bind-attr src="imagen.url"}} /></p>
 	{{/each}}
-<p>Tiempo de preparacion: {{tiempoPrep}}</p>
-<p>Rendimiento: {{rendimiento}}</p>
-<p>Ingredentes: {{ingredientes}}</p>
-<p>Preaparacion: {{preparacion}}</p>
-<p>Categorias:</p>
+<p><strong>Ingredentes:</strong></p>
+<p><pre>{{ingredientes}}</pre></p>
+<p><strong>Rendimiento:</strong> {{rendimiento}}</p>
+<p><strong>Preaparacion:</strong></p>
+<p>{{preparacion}}</p>
+<p><strong>Tiempo de preparacion:</strong> {{tiempoPrep}} minutos</p>
+<p><strong>Categorias:</strong></p>
 <ul>
 	{{#each categoria in categorias}}
 		<li>{{categoria.nombre}}</li>
