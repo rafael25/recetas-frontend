@@ -1,6 +1,6 @@
 <div id="add-btn-modal" class="reveal-modal" data-reveal>
 	<h2>Agregar nueva receta</h2>
-	<form>
+	<form class="receta-edit">
 		<div class="row collapse">
 			<div class="large-2 small-3 columns">
 				<span class="prefix">Nombre</span>
@@ -11,10 +11,26 @@
 		</div>
 		<div class="row collapse">
 			<div class="large-2 small-12 columns">
+				<span class="prefix">Imagen url</span>
+			</div>
+			<div class="large-10 small-12 columns">
+				{{input type="text" id="imagen" placeholder="URL de la imagen"}}
+			</div>
+		</div>
+		<div class="row collapse">
+			<div class="large-2 small-12 columns">
 				<span class="prefix">Ingredientes</span>
 			</div>
 			<div class="large-10 small-12 columns">
 				{{textarea rows=5 id="ingredientes" placeholder="Escribe aqui los ingredientes"}}
+			</div>
+		</div>
+		<div class="row collapse">
+			<div class="large-2 medium-3 small-12 columns">
+				<span class="prefix">Rendimiento</span>
+			</div>
+			<div class="large-10 medium-9 small-12 columns">
+				{{input type="text" id="rendimiento" placeholder="Rendimiento de la receta"}}
 			</div>
 		</div>
 		<div class="row collapse">
@@ -30,18 +46,10 @@
 				<span class="prefix">Tiempo</span>
 			</div>
 			<div class="large-8 medium-7 small-9 columns">
-				{{input type="text" id="tiempo" placeholder="Tiempo de preparacion en minutos"}}
+				{{input type="text" id="tiempo" class="text-right" placeholder="Tiempo de preparacion en minutos"}}
 			</div>
 			<div class="large-2 medium-2 small-3 columns">
 				<span class="postfix">minutos</span>
-			</div>
-		</div>
-		<div class="row collapse">
-			<div class="large-2 medium-3 small-12 columns">
-				<span class="prefix">Rendimiento</span>
-			</div>
-			<div class="large-10 medium-9 small-12 columns">
-				{{input type="text" id="rendimiento" placeholder="Rendimiento de la receta"}}
 			</div>
 		</div>
 		<div class="row collapse">

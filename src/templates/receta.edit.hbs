@@ -1,37 +1,50 @@
 <form class="receta-edit">
 	<div class="row">
-		<div class="small-12 columns">
+		<div class="large-10 small-12 large-push-2 columns">
 			{{input value=nombre class="nombre"}}
 		</div>
 	</div>
-	<div class="row">
-		<div class="small-12 columns">
-			{{input value=imagen}}
+	<div class="row collapse">
+		<div class="large-2 small-12 columns">
+			<span class="prefix">Imagen url</span>
+		</div>
+		<div class="large-10 small-12 columns">
+			{{input value=imagenes.content.0.url}}
 		</div>
 	</div>
-	<div class="row">
-		<div class="small-12 columns">
-			{{input value=descripcion}}
+	<div class="row collapse">
+		<div class="large-2 small-12 columns">
+			<span class="prefix">Ingredientes</span>
 		</div>
-	</div>
-	<div class="row">
-		<div class="small-12 columns">
-			{{input value=tiempoPrep}}
-		</div>
-	</div>
-	<div class="row">
-		<div class="small-12 columns">
-			{{input value=rendimiento}}
-		</div>
-	</div>
-	<div class="row">
-		<div class="small-12 columns">
+		<div class="large-10 small-12 columns">
 			{{textarea value=ingredientes rows=5}}
 		</div>
 	</div>
-	<div class="row">
-		<div class="small-12 columns">
+	<div class="row collapse">
+		<div class="large-2 small-12 columns">
+			<span class="prefix">Rendimiento</span>
+		</div>
+		<div class="large-10 small-12 columns">
+			{{input value=rendimiento}}
+		</div>
+	</div>
+	<div class="row collapse">
+		<div class="large-2 small-12 columns">
+			<span class="prefix">Preparacion</span>
+		</div>
+		<div class="large-10 small-12 columns">
 			{{textarea value=preparacion rows=6}}
+		</div>
+	</div>
+	<div class="row collapse">
+		<div class="large-2 medium-3 small-12 columns">
+			<span class="prefix">Tiempo</span>
+		</div>
+		<div class="large-8 medium-7 small-9 columns">
+			{{input class="text-right" value=tiempoPrep}}
+		</div>
+		<div class="large-2 medium-2 small-3 columns">
+			<span class="postfix">minutos</span>
 		</div>
 	</div>
 </form>

@@ -22,6 +22,10 @@ h2 {
     color: #fff;
 }
 
+.receta img {
+    min-width: 100%;
+}
+
 .receta-modal h2 {
     border-bottom: 2px dashed #A5B086;
     margin-bottom: 1.2rem;
@@ -29,7 +33,7 @@ h2 {
 
 .receta-edit input,
 .receta-edit textarea {
-	color: #A5B086;
+	color: #6E8923;
 	text-align: center;
 	border: none;
 	border-bottom: 1px solid rgba(165, 176, 134, 0.4);
@@ -43,6 +47,13 @@ h2 {
 
 .receta-edit .nombre {
 	font-size: 1.4rem;
+}
+
+.receta-edit .prefix,
+.receta-edit .postfix {
+    border: none;
+    border-bottom: 1px solid rgba(165, 176, 134, 0.4);
+    background: #FFF;
 }
 
 .top-bar {
