@@ -128,7 +128,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', ['index', 'browser-sync'], function() {
     gulp.watch(srcDir+'/css/*.css', ['watch-css']);
     gulp.watch(srcDir+'/js/*.js',['watch-js']);
-    gulp.watch(srcDir+'/js/**/.js',['watch-js']);
+    gulp.watch(srcDir+'/js/**/*.js',['watch-js']);
     gulp.watch(srcDir+'/templates/*.hbs', ['watch-templates']);
 });
 
